@@ -14,6 +14,7 @@ public class PasswordShould {
     void beNotValidifLessThenThan6Characters(String password) {
         assertThat(pass.isValidRule1(password)).isFalse();
     }
+
     @ParameterizedTest
     @ValueSource( strings = {"ZYXWVU","abCDef","abCDef","abcDefg","ab@de1"})
     void beValidIfAtLeast6Characters(String password) {
@@ -49,5 +50,12 @@ public class PasswordShould {
     void beValidIfStrong(String password) {
         assertThat(pass.isStrong(password)).isTrue();
     }
+
+    @ParameterizedTest
+    @ValueSource( strings = {"ZYXWVU"})
+    void beValidIfAtLeast10Characters(String password) {
+        assertThat(pass.isValidRule10CarMin(password)).isTrue();
+    }
+
 
 }

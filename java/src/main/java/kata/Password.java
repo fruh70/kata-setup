@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 
 public class Password {
 
-
     public boolean isValidRule1(String password) {
         return (password.length() >= 6);
     }
@@ -21,5 +20,9 @@ public class Password {
 
     public boolean isStrong(String password) {
         return isValidRule1(password) && isValidRule2(password) && isValidRule3(password);
+    }
+
+    public boolean isValidRule10CarMin(String password) {
+        return false;
     }
 }
